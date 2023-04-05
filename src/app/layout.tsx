@@ -2,6 +2,10 @@ import '@/styles/globals.css';
 import { ReactNode } from 'react';
 import ThemeProvider from '@/components/ui/ThemeProvider';
 import Navbar from '@/components/Navbar';
+import { Montserrat } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'DaisyUI',
@@ -10,7 +14,13 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html className='antialiased' lang='en'>
+    <html
+      className={cn(
+        'antialiased transition-colors duration-200',
+        montserrat.className
+      )}
+      lang='en'
+    >
       <body>
         <ThemeProvider>
           <Navbar />
