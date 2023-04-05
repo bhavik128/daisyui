@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       className={cn(
-        'antialiased transition-colors duration-200',
+        'antialiased transition-colors ease-in-out',
         montserrat.className
       )}
       lang='en'

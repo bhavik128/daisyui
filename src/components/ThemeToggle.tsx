@@ -10,12 +10,12 @@ interface ThemeToggleProps {}
 const ThemeToggle: FC<ThemeToggleProps> = ({}) => {
   const { theme, setTheme } = useTheme();
 
-  const ThemeToggleClick = () => {
+  const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (
-    <Button variant={'theme'} onClick={ThemeToggleClick}>
+    <Button onClick={toggleTheme} variant={'theme'}>
       {theme === 'dark' ? <Icons.dark /> : <Icons.light />}
     </Button>
   );

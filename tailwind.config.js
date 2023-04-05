@@ -5,6 +5,9 @@ module.exports = {
     themes: ['light', 'dark']
   },
   theme: {
+    container: {
+      padding: '1.5rem'
+    },
     extend: {}
   },
   plugins: [require('daisyui')]
