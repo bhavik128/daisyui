@@ -1,5 +1,7 @@
 import '@/styles/globals.css';
 import { ReactNode } from 'react';
+import ThemeProvider from '@/components/ui/ThemeProvider';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: 'DaisyUI',
@@ -8,9 +10,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en'>
+    <html className='antialiased' lang='en'>
       <body>
-        <main>{children}</main>
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
